@@ -1,0 +1,2003 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title> Vicente Jillian Portfolio</title>
+
+    <style>
+        /* =========================
+           BASIC
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #fffdf5;
+            color: #333;
+        }
+
+        :root {
+            --pink: #e83e7d;
+            --light-pink: #ffe6ef;
+            --yellow: #f7c928;
+            --light-yellow: #fff4c2;
+            --dark: #333;
+            --gray: #666;
+            --white: #fff;
+        }
+
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 65px;
+
+            background: white;
+            border-bottom: 2px solid var(--light-pink);
+
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1100px;
+            height: 100%;
+            margin: auto;
+            padding: 0 20px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            text-decoration: none;
+            color: var(--pink);
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .nav-links a:hover {
+            color: var(--pink);
+        }
+
+        .student {
+            background: var(--pink);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 13px;
+        }
+
+        .menu {
+            display: none;
+            border: none;
+            background: none;
+            font-size: 25px;
+            cursor: pointer;
+        }
+
+
+        /* =========================
+           HOME
+        ========================= */
+
+        .hero {
+            min-height: 100vh;
+            padding: 110px 8% 60px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+
+            background: #fffdf5;
+        }
+
+        .hero-content {
+            max-width: 600px;
+        }
+
+        .welcome {
+            color: var(--pink);
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: 60px;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: var(--yellow);
+        }
+
+        .hero p {
+            color: var(--gray);
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        .main-button {
+            display: inline-block;
+            background: var(--pink);
+            color: white;
+
+            text-decoration: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+
+            font-weight: bold;
+        }
+
+        .main-button:hover {
+            background: #c92f68;
+        }
+
+
+        /* =========================
+           PROFILE
+        ========================= */
+
+        .hero-photo {
+            width: 350px;
+            text-align: center;
+        }
+
+        .profile {
+            width: 280px;
+            height: 280px;
+
+            margin: auto;
+
+            border-radius: 50%;
+            overflow: hidden;
+
+            border: 7px solid var(--pink);
+            background: var(--light-yellow);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .profile img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-placeholder {
+            color: var(--pink);
+            font-weight: bold;
+            text-align: center;
+        }
+
+
+        /* =========================
+           GENERAL SECTION
+        ========================= */
+
+        .section {
+            padding: 80px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title small {
+            color: var(--pink);
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        .section-title h2 {
+            font-size: 35px;
+            margin: 8px 0;
+        }
+
+        .section-title p {
+            color: var(--gray);
+        }
+
+        .yellow-line {
+            width: 50px;
+            height: 4px;
+            background: var(--yellow);
+            margin: 15px auto;
+        }
+
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about {
+            background: white;
+        }
+
+        .about-container {
+            max-width: 950px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 40px;
+        }
+
+        .about-text h3 {
+            color: var(--pink);
+            margin-bottom: 15px;
+            font-size: 25px;
+        }
+
+        .about-text p {
+            color: var(--gray);
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .about-card {
+            background: var(--light-yellow);
+            border: 2px solid var(--yellow);
+
+            padding: 30px;
+            text-align: center;
+
+            border-radius: 10px;
+        }
+
+        .about-card h3 {
+            color: var(--pink);
+            margin-bottom: 10px;
+        }
+
+        .about-card p {
+            color: var(--gray);
+            margin-bottom: 15px;
+        }
+
+
+        /* =========================
+           COURSE REQUIREMENTS
+        ========================= */
+
+        .requirements {
+            background: #fffdf5;
+        }
+
+        .requirement-grid {
+            max-width: 1000px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .requirement-card {
+            padding: 30px 20px;
+            text-align: center;
+
+            border-radius: 8px;
+
+            cursor: pointer;
+        }
+
+        .quiz-card {
+            background: var(--light-pink);
+            border: 2px solid #f3a5c1;
+        }
+
+        .lab-card {
+            background: var(--light-yellow);
+            border: 2px solid #e8cd59;
+        }
+
+        .exam-card {
+            background: #fff0f5;
+            border: 2px solid #f3a5c1;
+        }
+
+        .requirement-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .requirement-icon {
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        .requirement-card h3 {
+            color: var(--pink);
+            margin-bottom: 10px;
+        }
+
+        .requirement-card p {
+            color: var(--gray);
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .view-btn {
+            border: none;
+            background: var(--pink);
+            color: white;
+
+            padding: 9px 15px;
+            margin-top: 15px;
+
+            border-radius: 5px;
+
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .lab-card .view-btn {
+            background: var(--yellow);
+            color: #333;
+        }
+
+
+        /* =========================
+           MODAL
+        ========================= */
+
+        .modal {
+            display: none;
+
+            position: fixed;
+            inset: 0;
+
+            background: rgba(0,0,0,0.6);
+
+            z-index: 2000;
+
+            padding: 20px;
+
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-box {
+            background: white;
+
+            width: 900px;
+            max-width: 100%;
+            max-height: 90vh;
+
+            overflow-y: auto;
+
+            border-radius: 10px;
+
+            padding: 30px;
+
+            position: relative;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+
+            width: 35px;
+            height: 35px;
+
+            border: none;
+            border-radius: 50%;
+
+            background: var(--pink);
+            color: white;
+
+            font-size: 22px;
+
+            cursor: pointer;
+        }
+
+
+        /* =========================
+           MODAL HEADER
+        ========================= */
+
+        .modal-header {
+            display: flex;
+            align-items: center;
+
+            gap: 15px;
+
+            margin-bottom: 25px;
+        }
+
+        .modal-icon {
+            width: 60px;
+            height: 60px;
+
+            background: var(--light-yellow);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 8px;
+
+            font-size: 30px;
+        }
+
+        .modal-header small {
+            color: var(--pink);
+            font-weight: bold;
+            font-size: 10px;
+        }
+
+        .modal-header h2 {
+            margin: 4px 0;
+        }
+
+        .modal-header p {
+            color: var(--gray);
+            font-size: 13px;
+        }
+
+
+        /* =========================
+           ACTIVITY CARDS
+        ========================= */
+
+        .activity-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .activity-card {
+            border: 1px solid #ddd;
+
+            border-radius: 8px;
+
+            overflow: hidden;
+
+            background: white;
+        }
+
+        .activity-picture {
+            width: 100%;
+            height: 200px;
+
+            background: var(--light-pink);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            overflow: hidden;
+        }
+
+        .activity-picture img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+        }
+
+        .picture-placeholder {
+            color: var(--pink);
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .activity-content {
+            padding: 18px;
+        }
+
+        .activity-content h3 {
+            color: var(--pink);
+            margin-bottom: 8px;
+        }
+
+        .activity-content p {
+            color: var(--gray);
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        .activity-date {
+            color: #888;
+            font-size: 11px;
+            margin-top: 8px;
+        }
+
+        .details-btn {
+            border: none;
+            background: var(--pink);
+            color: white;
+
+            padding: 8px 13px;
+            border-radius: 5px;
+
+            margin-top: 12px;
+
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+
+        /* =========================
+           DETAILS
+        ========================= */
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .details-picture {
+            width: 100%;
+            height: 400px;
+
+            background: var(--light-pink);
+
+            border-radius: 8px;
+
+            overflow: hidden;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .details-picture img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .details-placeholder {
+            color: var(--pink);
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .details-tag {
+            color: var(--pink);
+            font-size: 11px;
+            font-weight: bold;
+        }
+
+        .details-info h2 {
+            font-size: 32px;
+            margin: 8px 0 20px;
+        }
+
+        .info-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 12px 0;
+        }
+
+        .info-icon {
+            width: 35px;
+            height: 35px;
+
+            background: var(--light-yellow);
+
+            border-radius: 5px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .info-text small {
+            display: block;
+            color: #999;
+            font-size: 10px;
+        }
+
+        .info-text strong {
+            font-size: 13px;
+        }
+
+        .description {
+            border-top: 1px solid #ddd;
+            margin-top: 20px;
+            padding-top: 15px;
+        }
+
+        .description h3 {
+            color: var(--pink);
+            margin-bottom: 7px;
+        }
+
+        .description p {
+            color: var(--gray);
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .open-file {
+            display: block;
+
+            background: var(--yellow);
+            color: #333;
+
+            text-decoration: none;
+            text-align: center;
+
+            padding: 12px;
+
+            margin-top: 18px;
+
+            border-radius: 5px;
+
+            font-weight: bold;
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact {
+            background: white;
+            text-align: center;
+        }
+
+        .contact-box {
+            max-width: 650px;
+            margin: auto;
+
+            background: var(--light-pink);
+
+            border: 2px solid #f3a5c1;
+
+            padding: 35px;
+
+            border-radius: 10px;
+        }
+
+        .contact-box h3 {
+            color: var(--pink);
+            margin-bottom: 10px;
+        }
+
+        .contact-box p {
+            color: var(--gray);
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+
+            gap: 10px;
+
+            margin-top: 20px;
+        }
+
+        .contact-info span {
+            background: white;
+            color: var(--pink);
+
+            padding: 9px 13px;
+
+            border-radius: 5px;
+
+            font-size: 12px;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: var(--pink);
+            color: white;
+
+            text-align: center;
+
+            padding: 25px;
+        }
+
+        footer h3 {
+            color: var(--yellow);
+            margin-bottom: 8px;
+        }
+
+        footer p {
+            font-size: 12px;
+            margin: 5px;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            .nav-links {
+                display: none;
+
+                position: absolute;
+
+                top: 65px;
+                left: 0;
+
+                width: 100%;
+
+                background: white;
+
+                flex-direction: column;
+
+                text-align: center;
+
+                padding: 20px;
+
+                gap: 18px;
+            }
+
+            .nav-links.show {
+                display: flex;
+            }
+
+            .student {
+                display: none;
+            }
+
+            .menu {
+                display: block;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 45px;
+            }
+
+            .about-container {
+                grid-template-columns: 1fr;
+            }
+
+            .requirement-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .activity-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .details-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .hero {
+                padding-left: 5%;
+                padding-right: 5%;
+            }
+
+            .section {
+                padding: 60px 5%;
+            }
+
+            .profile {
+                width: 230px;
+                height: 230px;
+            }
+
+            .hero-photo {
+                width: 100%;
+            }
+
+            .details-picture {
+                height: 300px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<header>
+
+    <nav>
+
+        <a href="#home" class="logo">
+            📖 My Portfolio
+        </a>
+
+        <ul class="nav-links" id="navLinks">
+
+            <li>
+                <a href="#home">Home</a>
+            </li>
+
+            <li>
+                <a href="#about">About Me</a>
+            </li>
+
+            <li>
+                <a href="#requirements">
+                    Course Requirements
+                </a>
+            </li>
+
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+
+        </ul>
+
+        <div class="student">
+            🎓 Student
+        </div>
+
+        <button
+            class="menu"
+            onclick="toggleMenu()">
+            ☰
+        </button>
+
+    </nav>
+
+</header>
+
+
+
+<!-- =========================
+     HOME
+========================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="welcome">
+            Welcome to my portfolio
+        </div>
+
+        <h1>
+            Jillian Vicente 
+            <span>BSCS 3D</span>
+        </h1>
+
+        <p>
+            Welcome to my Web portfolio.
+            This website contains my quizzes,
+            laboratory activities, and exams
+            completed throughout the course.
+        </p>
+
+        <a
+            href="#requirements"
+            class="main-button">
+
+            View Course Requirements
+
+        </a>
+
+    </div>
+
+
+    <!-- PROFILE PHOTO -->
+
+    <div class="hero-photo">
+
+        <div class="profile">
+
+            <img
+                id="profileImage"
+                src="Vicente.jfif"
+                alt="Profile Photo">
+
+            <div
+                class="profile-placeholder"
+                id="profilePlaceholder"
+                style="display:none;">
+
+                📷
+                <br><br>
+                YOUR PROFILE PHOTO
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     ABOUT ME
+========================= -->
+
+<section
+    class="section about"
+    id="about">
+
+    <div class="section-title">
+
+        <small>ABOUT ME</small>
+
+        <h2>Hello! My name is Jillian Vicente!</h2>
+
+        <div class="yellow-line"></div>
+
+    </div>
+
+
+    <div class="about-container">
+
+        <div class="about-text">
+
+            <h3>
+                Welcome!
+            </h3>
+
+            <p>
+                This website is my digital academic
+                portfolio where I showcase my
+                completed course requirements.
+            </p>
+
+            <p>
+                It contains my quizzes,
+                laboratory activities,
+                and examinations.
+            </p>
+
+            <p>
+                This portfolio represents my
+                learning, effort, and progress
+                throughout the course.
+            </p>
+
+        </div>
+
+
+        <div class="about-card">
+
+            <h3>
+                Course Requirements
+            </h3>
+
+            <p>
+                My academic activities include:
+            </p>
+
+            <strong>
+                 Quizzes
+                <br><br>
+                 Laboratory Activities
+                <br><br>
+                 Exams
+            </strong>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     COURSE REQUIREMENTS
+========================= -->
+
+<section
+    class="section requirements"
+    id="requirements">
+
+    <div class="section-title">
+
+        <small>COURSE REQUIREMENTS</small>
+
+        <h2>My Course Requirements</h2>
+
+        <p>
+            Select a category to view my activities.
+        </p>
+
+        <div class="yellow-line"></div>
+
+    </div>
+
+
+    <div class="requirement-grid">
+
+
+        <!-- QUIZZES -->
+
+        <div
+            class="requirement-card quiz-card"
+            onclick="openCategory('quizzes')">
+
+            <div class="requirement-icon">
+                📝
+            </div>
+
+            <h3>
+                Quizzes
+            </h3>
+
+            <p>
+                My quizzes and assessments.
+            </p>
+
+            <button class="view-btn">
+                View Quizzes
+            </button>
+
+        </div>
+
+
+        <!-- LABORATORY -->
+
+        <div
+            class="requirement-card lab-card"
+            onclick="openCategory('laboratory')">
+
+            <div class="requirement-icon">
+                🧪
+            </div>
+
+            <h3>
+                Laboratory
+            </h3>
+
+            <p>
+                My laboratory activities
+                and practical outputs.
+            </p>
+
+            <button class="view-btn">
+                View Laboratory
+            </button>
+
+        </div>
+
+
+        <!-- EXAMS -->
+
+        <div
+            class="requirement-card exam-card"
+            onclick="openCategory('exams')">
+
+            <div class="requirement-icon">
+                🎓
+            </div>
+
+            <h3>
+                Exams
+            </h3>
+
+            <p>
+                My Midterm and Final Exams.
+            </p>
+
+            <button class="view-btn">
+                View Exams
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     CATEGORY MODAL
+========================= -->
+
+<div
+    class="modal"
+    id="categoryModal">
+
+    <div class="modal-box">
+
+        <button
+            class="close-btn"
+            onclick="closeCategory()">
+            ×
+        </button>
+
+
+        <div class="modal-header">
+
+            <div
+                class="modal-icon"
+                id="modalIcon">
+                📝
+            </div>
+
+            <div>
+
+                <small>
+                    COURSE REQUIREMENT
+                </small>
+
+                <h2 id="modalTitle">
+                    Quizzes
+                </h2>
+
+                <p id="modalDescription">
+                    My quizzes.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div
+            class="activity-grid"
+            id="activityGrid">
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================
+     DETAILS MODAL
+========================= -->
+
+<div
+    class="modal"
+    id="detailsModal">
+
+    <div class="modal-box">
+
+        <button
+            class="close-btn"
+            onclick="closeDetails()">
+            ×
+        </button>
+
+
+        <div class="details-grid">
+
+
+            <!-- ACTIVITY PICTURE -->
+
+            <div class="details-picture">
+
+                <img
+                    id="detailsImage"
+                    src=""
+                    alt="Activity Picture">
+
+                <div
+                    class="details-placeholder"
+                    id="detailsPlaceholder">
+
+                    📷
+                    <br><br>
+                    ACTIVITY PICTURE
+
+                </div>
+
+            </div>
+
+
+            <!-- DETAILS -->
+
+            <div class="details-info">
+
+                <div class="details-tag">
+                    ACADEMIC ACTIVITY
+                </div>
+
+                <h2 id="detailsTitle">
+                    Quiz #1
+                </h2>
+
+
+                <div class="info-row">
+
+                    <div class="info-icon">
+                        📚
+                    </div>
+
+                    <div class="info-text">
+
+                        <small>
+                            Topic
+                        </small>
+
+                        <strong id="detailsTopic">
+                            Topic
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="info-row">
+
+                    <div class="info-icon">
+                        📅
+                    </div>
+
+                    <div class="info-text">
+
+                        <small>
+                            Date
+                        </small>
+
+                        <strong id="detailsDate">
+                            Date
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="info-row">
+
+                    <div class="info-icon">
+                        👩‍🏫
+                    </div>
+
+                    <div class="info-text">
+
+                        <small>
+                            Instructor
+                        </small>
+
+                        <strong id="detailsInstructor">
+                            Instructor
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="info-row">
+
+                    <div class="info-icon">
+                        📄
+                    </div>
+
+                    <div class="info-text">
+
+                        <small>
+                            File
+                        </small>
+
+                        <strong id="detailsFile">
+                            File
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="description">
+
+                    <h3>
+                        Description
+                    </h3>
+
+                    <p id="detailsDescription">
+                        Description.
+                    </p>
+
+                </div>
+
+
+                <a
+                    href="#"
+                    id="openFile"
+                    class="open-file"
+                    target="_blank">
+
+                    Open Activity
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section
+    class="section contact"
+    id="contact">
+
+    <div class="section-title">
+
+        <small>CONTACT</small>
+
+        <h2>Get In Touch</h2>
+
+        <div class="yellow-line"></div>
+
+    </div>
+
+
+    <div class="contact-box">
+
+        <h3>
+            Thank You for Visiting!
+        </h3>
+
+        <p>
+            Thank you for viewing my academic portfolio.
+        </p>
+
+
+        <div class="contact-info">
+
+            <span>
+                📧 jillian.vicente@cvsu.edu.ph
+            </span>
+
+            <span>
+                📱 +63 9457025505
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <h3>
+        📖 My Academic Portfolio
+    </h3>
+
+    <p>
+        Jillian Vicente | BSCS 3D
+    </p>
+
+    <p>
+        Bachelor of Science in Computer Science
+    </p>
+
+</footer>
+
+
+
+<script>
+
+
+const portfolio = {
+
+    /* =========================
+       QUIZZES
+    ========================= */
+
+    quizzes: {
+
+        title: "Quizzes",
+
+        icon: "📝",
+
+        description:
+            "My quizzes and assessments throughout the course.",
+
+        activities: [
+
+            {
+                title: "Quiz #1",
+
+                topic:
+                    "Introduction about Web Application",
+
+                date:
+                    "August 25, 2026",
+
+                instructor:
+                    "Sir Puyo",
+
+                file:
+                    "Quiz1.pdf",
+
+                description:
+                    "This is my Quiz #1. This activity contains questions and answers based on the lessons discussed in class.",
+
+                image:
+                    "quiz1frontpage.jpg.jfif"
+            },
+
+
+            {
+                title: "Quiz #2",
+
+                topic:
+                    "Second Lesson",
+
+                date:
+                    "September 1, 2026",
+
+                instructor:
+                    "Sir Puyo",
+
+                file:
+                    "Quiz2.pdf",
+
+                description:
+                    "This is my Quiz #2.",
+
+                image:
+                    "qupage.jpg.jfif"
+            }
+
+        ]
+
+    },
+
+
+    /* =========================
+       LABORATORY
+    ========================= */
+
+    laboratory: {
+
+        title:
+            "Laboratory Activities",
+
+        icon:
+            "🧪",
+
+        description:
+            "My laboratory activities and practical outputs.",
+
+        activities: [
+
+            {
+                title:
+                    "Laboratory Activity #1",
+
+                topic:
+                    "Basic Laboratory Exercise",
+
+                date:
+                    "August 2026",
+
+                instructor:
+                    "Sir Puyo",
+
+                file:
+                    "Lab1.jpg",
+
+                description:
+                    "This is my first laboratory activity and practical output.",
+
+                image:
+                    "Lab1.jpg"
+            },
+
+
+            {
+                title:
+                    "Laboratory Activity #2",
+
+                topic:
+                    "Practical Exercise",
+
+                date:
+                    "September 2026",
+
+                instructor:
+                    "Sir Puyo",
+
+                file:
+                    "Lab2.jpg",
+
+                description:
+                    "This is my second laboratory activity.",
+
+                image:
+                    "Lab2.jpg"
+            }
+
+        ]
+
+    },
+
+
+    /* =========================
+       EXAMS
+    ========================= */
+
+    exams: {
+
+        title:
+            "Exams",
+
+        icon:
+            "🎓",
+
+        description:
+            "My Midterm and Final examination requirements.",
+
+        activities: [
+
+            {
+                title:
+                    "Midterm Exam",
+
+                topic:
+                    "Midterm Examination",
+
+                date:
+                    "October 2026",
+
+                instructor:
+                    "Sir Puyo",
+
+                file:
+                    "Midterm.jpg",
+
+                description:
+                    "This is my Midterm Examination requirement.",
+
+                image:
+                    "Midterm.jpg"
+            },
+
+
+            {
+                title:
+                    "Final Exam",
+
+                topic:
+                    "Final Examination",
+
+                date:
+                    "December 2026",
+
+                instructor:
+                    "Sir Puyo",
+
+                file:
+                    "Final.jpg",
+
+                description:
+                    "This is my Final Examination requirement.",
+
+                image:
+                    "Final.jpg"
+            }
+
+        ]
+
+    }
+
+};
+
+
+/* =========================================
+   MOBILE MENU
+========================================= */
+
+function toggleMenu() {
+
+    document
+        .getElementById("navLinks")
+        .classList.toggle("show");
+
+}
+
+
+/* =========================================
+   OPEN CATEGORY
+========================================= */
+
+function openCategory(categoryName) {
+
+    const category =
+        portfolio[categoryName];
+
+    document
+        .getElementById("modalIcon")
+        .textContent =
+        category.icon;
+
+    document
+        .getElementById("modalTitle")
+        .textContent =
+        category.title;
+
+    document
+        .getElementById("modalDescription")
+        .textContent =
+        category.description;
+
+
+    const activityGrid =
+        document.getElementById(
+            "activityGrid"
+        );
+
+    activityGrid.innerHTML = "";
+
+
+    category.activities.forEach(
+        (activity, index) => {
+
+            const card =
+                document.createElement("div");
+
+            card.className =
+                "activity-card";
+
+
+            card.innerHTML = `
+
+                <div class="activity-picture">
+
+                    <img
+                        src="${activity.image}"
+                        alt="${activity.title}"
+                        onerror="
+                            this.style.display='none';
+                            this.nextElementSibling.style.display='block';
+                        "
+                    >
+
+                    <div
+                        class="picture-placeholder"
+                        style="display:none;">
+
+                        📷
+                        <br><br>
+                        Picture not found
+
+                    </div>
+
+                </div>
+
+
+                <div class="activity-content">
+
+                    <h3>
+                        ${activity.title}
+                    </h3>
+
+                    <p>
+                        ${activity.topic}
+                    </p>
+
+                    <div class="activity-date">
+                        📅 ${activity.date}
+                    </div>
+
+                    <button
+                        class="details-btn"
+                        onclick="
+                            openDetails(
+                                '${categoryName}',
+                                ${index}
+                            )
+                        ">
+
+                        View Details
+
+                    </button>
+
+                </div>
+
+            `;
+
+
+            activityGrid.appendChild(card);
+
+        }
+    );
+
+
+    document
+        .getElementById("categoryModal")
+        .classList.add("active");
+
+    document.body.style.overflow =
+        "hidden";
+
+}
+
+
+/* =========================================
+   OPEN DETAILS
+========================================= */
+
+function openDetails(
+    categoryName,
+    activityIndex
+) {
+
+    const activity =
+        portfolio[
+            categoryName
+        ].activities[
+            activityIndex
+        ];
+
+
+    document
+        .getElementById("detailsTitle")
+        .textContent =
+        activity.title;
+
+
+    document
+        .getElementById("detailsTopic")
+        .textContent =
+        activity.topic;
+
+
+    document
+        .getElementById("detailsDate")
+        .textContent =
+        activity.date;
+
+
+    document
+        .getElementById("detailsInstructor")
+        .textContent =
+        activity.instructor;
+
+
+    document
+        .getElementById("detailsFile")
+        .textContent =
+        activity.file;
+
+
+    document
+        .getElementById("detailsDescription")
+        .textContent =
+        activity.description;
+
+
+    const image =
+        document.getElementById(
+            "detailsImage"
+        );
+
+    const placeholder =
+        document.getElementById(
+            "detailsPlaceholder"
+        );
+
+
+    image.src =
+        activity.image;
+
+    image.style.display =
+        "block";
+
+    placeholder.style.display =
+        "none";
+
+
+    image.onerror =
+        function() {
+
+            image.style.display =
+                "none";
+
+            placeholder.style.display =
+                "block";
+
+        };
+
+
+    document
+        .getElementById("openFile")
+        .href =
+        activity.file;
+
+
+    document
+        .getElementById("detailsModal")
+        .classList.add("active");
+
+}
+
+
+/* =========================================
+   CLOSE CATEGORY
+========================================= */
+
+function closeCategory() {
+
+    document
+        .getElementById("categoryModal")
+        .classList.remove("active");
+
+    document.body.style.overflow =
+        "auto";
+
+}
+
+
+/* =========================================
+   CLOSE DETAILS
+========================================= */
+
+function closeDetails() {
+
+    document
+        .getElementById("detailsModal")
+        .classList.remove("active");
+
+}
+
+
+/* =========================================
+   CLICK OUTSIDE MODAL
+========================================= */
+
+window.addEventListener(
+    "click",
+    function(event) {
+
+        const categoryModal =
+            document.getElementById(
+                "categoryModal"
+            );
+
+        const detailsModal =
+            document.getElementById(
+                "detailsModal"
+            );
+
+
+        if (
+            event.target ===
+            categoryModal
+        ) {
+
+            closeCategory();
+
+        }
+
+
+        if (
+            event.target ===
+            detailsModal
+        ) {
+
+            closeDetails();
+
+        }
+
+    }
+);
+
+
+/* =========================================
+   ESC KEY
+========================================= */
+
+document.addEventListener(
+    "keydown",
+    function(event) {
+
+        if (event.key === "Escape") {
+
+            closeCategory();
+
+            closeDetails();
+
+        }
+
+    }
+);
+
+
+/* =========================================
+   PROFILE PICTURE
+========================================= */
+
+const profileImage =
+    document.getElementById(
+        "profileImage"
+    );
+
+const profilePlaceholder =
+    document.getElementById(
+        "profilePlaceholder"
+    );
+
+
+profileImage.onerror =
+    function() {
+
+        profileImage.style.display =
+            "none";
+
+        profilePlaceholder.style.display =
+            "block";
+
+    };
+
+</script>
+
+
+</body>
+</html>
